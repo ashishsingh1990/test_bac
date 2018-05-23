@@ -1,0 +1,48 @@
+.col-md-12
+  %div.col-md-4.col-md-offset-4.text-center
+    %h4 Import Products
+    %hr
+    %span.file-error File size should be equal to or less than 10MB
+    = form_tag import_products_path, multipart: true do
+      .form-group.col-md-9
+        = file_field_tag :file, class: "form-control"
+      .form-group.col-md-3
+        = submit_tag "Import", id: "import-file", class: "btn btn-primary", disabled: true
+    %br
+    %br
+    %hr
+    %h4.text-center
+      Product List
+    %table.table.table-bordered.col-md-12
+      %tr
+        %th.text-center
+          name
+        %th.text-center
+          Description
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td
+              = product.name
+            %td
+              = product.description
+
+:css
+  .file-error{
+    color:red;
+    font: 10px;
+    display: none;
+  }
+ 
+:javascript
+  $('#file').bind('change', function() {
+    if ((this.files[0].size/1048576) < 10){
+      $("#import-file").removeAttr("disabled");
+      $(".file-error").hide()
+    }else{
+      $("#import-file").attr("disabled", "disabled");
+      $(".file-error").show()
+    }
+  });
+
+
