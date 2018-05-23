@@ -33,18 +33,17 @@ I have given example username and password need to set according to your databas
 
 10. Make excelsheet
 
-sheet-1
+sheet-1 with header which is given below 
 ---------------------
-name     description
-ashish    singh
-bandana   singh
-ravi      jain
+name,  description
 
-sheet-2
+You can create record eg.  Ashish,  He is good developer
 -----------------------
-name     description
-Ajay      sharma
-vijay     yadav 
-rahul     patel
-    
+
+sheet-2 with header which is given below  
+-----------------------
+name,  description
+
+You can create record eg. Naveen,  He is good manager
+-------------------------------------------------------
 After that you can upload execelsheet and click save button. It will upload from backgroud or file size should be less than 10 MB if file size more than 10MB you will get error message on the screen with red color. 
